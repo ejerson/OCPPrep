@@ -8,8 +8,17 @@ public class OuterClassInner {
     return "I'm from outside";
   }
 
-  // can use any access modefier
-  public class MemberInnerClass {
+
+  /**
+   *  > be abstract or final
+   *  > use any access modifier
+   *  > access all members of the outer class
+   *  > extend any class or implement interfaces
+   *
+   *  > CANNOT have static variables or methods within
+   *
+   * */
+  public final class MemberInnerClass {
 
     // cannot have static variables or methods
 
@@ -24,9 +33,12 @@ public class OuterClassInner {
     }
   }
 
+  /**
+   *  > CANNOT instantiate a member inner class inside a main method because of its
+   *  non-static nature
+   *
+   * */
   public void callInner() {
-    // to instantiate a member "inner class",
-    // it cannot be done inside a main method because of its non-static nature
     MemberInnerClass inner = new MemberInnerClass();
     inner.innerMethod();
     System.out.println(inner.communication);
