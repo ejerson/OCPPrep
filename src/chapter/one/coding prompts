@@ -1,6 +1,6 @@
 
 ENUMS
-1. Create three enums that contains one method, a constructor, and a field.
+1. Create three enums that contains one method, multiNestedClasses constructor, and multiNestedClasses field.
 2. Create five enums, three of which each have their own method,
 and create one default method for the rest of the enum.
 
