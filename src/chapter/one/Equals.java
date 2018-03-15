@@ -17,7 +17,6 @@ public class Equals {
     // from Object, which simply checks if
     // two objects references being compared points to the same object
 
-
   }
 
 
