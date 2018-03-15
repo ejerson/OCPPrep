@@ -1,5 +1,12 @@
 package chapter.one;
 
+
+/**
+ *  > WHEN COMPILING => Two class files are created:
+ *      OuterClassInner.class AND OuterClassInner$MemberInnerClass.class
+ *
+ *
+ * */
 public class OuterClassInner {
 
   private static String sOuter = "Hello";
@@ -44,6 +51,7 @@ public class OuterClassInner {
     System.out.println(inner.communication);
   }
 
+  /** MUST BE USED WITH AN INSTANCE OF THE OUTER CLASS */
   public static void main(String[] args) {
     OuterClassInner outer = new OuterClassInner();
     outer.callInner();
