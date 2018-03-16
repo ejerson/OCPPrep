@@ -2,6 +2,12 @@ package chapter.one;
 
 public class OuterClassAnonymous {
 
+  public static void main(String[] args) {
+    MoreLocalInner more = new MoreLocalInner();
+    more.execute();
+    System.out.println(more.execute());
+  }
+
   interface Greeting {
     void sayHi();
   }
@@ -20,8 +26,6 @@ public class OuterClassAnonymous {
       }
       /** This is a local variable, the semicolon is required! */
     };
-
-
 
   }
 
@@ -42,5 +46,30 @@ public class OuterClassAnonymous {
     };
   }
 
+}
+
+class MoreLocalInner {
+
+  interface Plan {
+    /** implemented inside an anonymous class */
+    String planStudy();
+  }
+
+
+  /** excute() returns a String that is produced by the refine() method */
+  public String execute() {
+
+    /** calls the refine() method that accepts a string, and an object */
+    return refine("Finish Chapter One ", new Plan() {
+      /** implementation of planStudy method from Plan interface */
+      public String  planStudy() {
+        return "Create Useful easy to follow notes";
+      }
+    });
+  }
+
+  public String refine(String firstPlan, Plan plan) {
+    return firstPlan + plan.planStudy();
+  }
 
 }
